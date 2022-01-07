@@ -1,14 +1,44 @@
-#homePage:
-#    path: /
-#    controller: \App\Controller\PostController
-#    action: home
-#
-#showOne:
-#    path: /show/{id}-{truc}
-#    controller: \App\Controller\PostController
-#    action: show
-#
-#showTest:
-#    path: /show
-#    controller: \App\Controller\PostController
-#    action: showTest
+homePage:
+   path: /
+   controller: \App\Controller\PostController
+   action: home
+
+articlePage:
+   path: /article/{id}
+   controller: \App\Controller\PostController
+   action: article
+
+createArticle:
+   path: /createArticle
+   controller: \App\Controller\PostController
+   action: createArticle
+
+modifyArticle:
+   path: /modifyArticle/{id}
+   controller: \App\Controller\PostController
+   action: modifyArticle
+
+deleteArticle:
+   path: /deleteArticle/{id}
+   controller: \App\Controller\PostController
+   action: deleteArticle
+
+usersPage:
+   path: /users
+   controller: \App\Controller\UserController
+   action: users
+
+singleUserPage:
+   path: /user/{id}
+   controller: \App\Controller\UserController
+   action: user   
+
+showOne:
+   path: /show/{id}-{truc}
+   controller: \App\Controller\PostController
+   action: show
+
+showTest:
+   path: /show
+   controller: \App\Controller\PostController
+   action: showTest
