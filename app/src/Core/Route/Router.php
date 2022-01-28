@@ -25,7 +25,6 @@ class Router
     {
         $yaml = yaml_parse_file($this->routesFilePath);
         $uri = '/' . trim(explode('?', $_SERVER["REQUEST_URI"])[0], '/');
-
         foreach ($yaml as $name => $config) {
             $this->routes[] = new Route($name, $config);
         }

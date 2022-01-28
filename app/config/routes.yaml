@@ -31,7 +31,17 @@ usersPage:
 singleUserPage:
    path: /user/{id}
    controller: \App\Controller\UserController
-   action: user   
+   action: user
+
+modifyUser:
+   path: /modifyUser/{id}
+   controller: \App\Controller\UserController
+   action: modifyUser
+
+deleteUser:
+   path: /deleteUser/{id}
+   controller: \App\Controller\UserController
+   action: deleteUser
 
 showOne:
    path: /show/{id}-{truc}

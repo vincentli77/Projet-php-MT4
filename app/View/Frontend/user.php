@@ -3,13 +3,21 @@
 
 <?php
 // /** @var $article \App\Entity\Post */
+        session_start();
+        echo '<pre>';
+        var_dump($_SESSION);
+        echo '</pre>';
+
 
 foreach ($users as $key => $user) {
     echo $user->getId();
     echo $user->getNickname();
     echo $user->getRank();
-}
-?>
+    ?>
+    <a href="/modifyUser/<?php echo $user->getId()?>">Modifier cet utilisateur</a>
+    <a href="/deleteUser/<?php echo $user->getId()?>">Supprimer cet utilisateur</a>
+
+<?php } ?>
 
 
    

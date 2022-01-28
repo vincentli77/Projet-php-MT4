@@ -6,6 +6,8 @@ use App\Core\Factory\PDOFactory;
 use App\Manager\PostManager;
 use App\Entity\Post;
 
+use App\Manager\UserManager;
+
 class PostController extends BaseController
 {
     /**
@@ -14,10 +16,18 @@ class PostController extends BaseController
      */
     public function getHome()
     {
-        $manager = new PostManager(PDOFactory::getInstance());
-        
-        $post = $manager->findAllPosts();
+        session_start();
+        $manager = new UserManager(PDOFactory::getInstance());
+        $user = $manager->findUser(1);
+        echo $user->getNickname();
+        echo $user->getRank();
+        $_SESSION['prenom'] = $user->getNickname();
+        $_SESSION['admin'] = $user->getRank();
 
+
+
+        $manager = new PostManager(PDOFactory::getInstance());
+        $post = $manager->findAllPosts();
         $articles = [];
 
         foreach ($post as $key => $article) {
@@ -25,6 +35,7 @@ class PostController extends BaseController
         }
         $this->render('Frontend/home', ['articles' => $articles], 'le titre de la page');
     }
+
 
     public function getArticle(int $id)
     {
@@ -41,7 +52,6 @@ class PostController extends BaseController
     public function postCreateArticle()
     {
         $manager = new PostManager(PDOFactory::getInstance());
-        var_dump($_POST);
         if (isset($_POST['title']) && isset($_POST['content'])) {
             $manager->createPost($_POST['title'], $_POST['content'], $_POST['authorId']);
             $this->render('Frontend/createArticle', [] , 'Créer un article');
@@ -51,8 +61,13 @@ class PostController extends BaseController
     public function getDeleteArticle(int $id)
     {
         $manager = new PostManager(PDOFactory::getInstance());
-        
-        //a completer next step 
+        if($manager->deletePost($id)){
+            header('Location: /');
+            exit;
+        }
+        else {
+            throw new Exception("Error Processing Request", 1);
+        }
     }
 
     public function getModifyArticle(int $id)
@@ -66,10 +81,9 @@ class PostController extends BaseController
     public function postModifyArticle(int $id)
     {
         $manager = new PostManager(PDOFactory::getInstance());
-        // var_dump($_POST);
         if (isset($_POST['title']) && isset($_POST['content'])) {
-            $manager->ModifyPost($id, $_POST['title'], $_POST['content'], $_POST['authorId']);
-            $this->render('Frontend/modifyArticle', [] , 'Créer un article');
+            $manager->modifyPost($id, $_POST['title'], $_POST['content'], $_POST['authorId']);
+            $this->render('Frontend/modifyArticle', [] , 'Modifier un article');
         }
     }
 
