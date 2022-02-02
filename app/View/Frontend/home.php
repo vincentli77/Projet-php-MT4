@@ -28,7 +28,7 @@
         </div>
 
         <!-- ----------------- cote article qui défile------------ ----------------- -->
-
+        <!----------------- l'article 1 ------------------>
         <div class="blog-header-container">
             <div class="blog-header">
             <div class="blog-article header-article">
@@ -54,7 +54,7 @@
                         </a>
                     </div>
         </div>
-        <!----------------- l'article 3 ------------------>
+        <!----------------- l'article 2 ------------------>
 
         <div class="blog-header">
             <div class="blog-article header-article">
@@ -79,7 +79,7 @@
                     </div>
         </div>
 
-        <!----------------- l'article 4 ------------------>
+        <!----------------- l'article 3 ------------------>
         <div class="blog-header">
         <div class="blog-article header-article">
             <div class="blog-big__title">Control</div>
