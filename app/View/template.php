@@ -8,6 +8,8 @@
     <title><?= $title; ?></title>
     <style>
         <?php include 'main.css'; ?>
+        <?php include 'form.css'; ?>
+
     </style>
 </head>
 <body>
