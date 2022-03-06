@@ -149,6 +149,21 @@
             </div>
 
         </div>
+<<<<<<< Updated upstream
+=======
+        </div>
+</div>
+
+<h1> En attendant voici la liste de tous vos articles</h1>
+
+<?php
+// show_error();
+// show_success();
+?>
+    <div class="articles">
+        <a href="/">Retour à l'accueil</a> <!-- RESTO URL SITE configurer dans config -->
+        <a href="/createArticle">Ajouter un article</a>
+>>>>>>> Stashed changes
     </div>
 </div>
 <ul class="list">
