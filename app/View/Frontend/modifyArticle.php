@@ -4,3 +4,5 @@
     <input name="authorId" type="text" value="<?php echo $article->getAuthorId();?>">
     <input type="submit" value="modify">
 </form>
+
+<a href="/">Home</a>

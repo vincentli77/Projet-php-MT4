@@ -1,7 +1,6 @@
-<h1>Je suis une page article</h1>
-
 <?php
-echo $article->getTitle();
+echo $article->getTitle(); ?><br><?php
 echo $article->getContent();
 ?>
 
+<a href="/">Home</a>

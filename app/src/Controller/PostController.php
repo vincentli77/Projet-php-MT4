@@ -16,16 +16,8 @@ class PostController extends BaseController
      */
     public function getHome()
     {
-        session_start();
         $manager = new UserManager(PDOFactory::getInstance());
-        $user = $manager->findUser(1);
-        echo $user->getNickname();
-        echo $user->getRank();
-        $_SESSION['prenom'] = $user->getNickname();
-        $_SESSION['admin'] = $user->getRank();
-
-
-
+        $user = $manager->findAllUsers();
         $manager = new PostManager(PDOFactory::getInstance());
         $post = $manager->findAllPosts();
         $articles = [];
@@ -33,7 +25,7 @@ class PostController extends BaseController
         foreach ($post as $key => $article) {
             array_push($articles, new Post($article));
         }
-        $this->render('Frontend/home', ['articles' => $articles], 'le titre de la page');
+        $this->render('Frontend/home', ['articles' => $articles,'user' => $user], 'le titre de la page');
     }
 
 
@@ -66,7 +58,7 @@ class PostController extends BaseController
             exit;
         }
         else {
-            throw new Exception("Error Processing Request", 1);
+            // throw new Exception("Error Processing Request", 1);
         }
     }
 
@@ -75,6 +67,7 @@ class PostController extends BaseController
         $manager = new PostManager(PDOFactory::getInstance());
         $post = $manager->findPost($id);
         $this->render('Frontend/modifyArticle', ['article' => $post] , 'Modifier un article');
+       
     }
 
     
@@ -96,17 +89,5 @@ class PostController extends BaseController
      * @param string $truc
      * @return void
      */
-    public function getShow(int $id, string $truc)
-    {
-        $this->renderJSON(['message' => $truc, 'parametre' => $id]);
-    }
 
-    /**
-     * @Route(path="/show")
-     * @return void
-     */
-    public function getShowTest()
-    {
-        echo 'je suis bien la bonne méthode';
-    }
 }

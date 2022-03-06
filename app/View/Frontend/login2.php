@@ -7,16 +7,15 @@
 </head>
 
 <body>
-
-
-
     <div class="box_connect">
-        <h1>Créer un compte</h1>
+        <h1>Se connecter</h1>
         <form method="post">
-            <label for="title"> Username: <input name="user" type="text"></label>
-            <label for="content"> Password : <input name="pswd" type="text"></label>
+            <label for="title"> Username: <input name="username" type="text"></label>
+            <label for="content"> Password : <input name="password" type="text"></label>
             <input type="submit" value="Envoyer" />
         </form>
+
+        <?php $check ?>
 
 
     </div>

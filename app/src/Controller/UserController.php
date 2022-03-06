@@ -24,12 +24,12 @@ class UserController extends BaseController
         $this->render('Frontend/user', ['users' => $users], 'le titre de la page');
     }
 
-    public function getSingleUser(int $id)
-    {
-        $manager = new UserManager(PDOFactory::getInstance());
-        $user = $manager->findPost($id);
-        $this->render('Frontend/article', ['users' => $user], 'le titre de la page');
-    }
+    // public function getSingleUser(int $id)
+    // {
+    //     $manager = new UserManager(PDOFactory::getInstance());
+    //     $user = $manager->findPost($id);
+    //     $this->render('Frontend/article', ['users' => $user], 'le titre de la page');
+    // }
 
     public function getModifyUser(int $id)
     {
@@ -56,7 +56,7 @@ class UserController extends BaseController
             exit;
         }
         else {
-            throw new Exception("Error Processing Request", 1);
+            // throw new Exception("Error Processing Request", 1);
         }
     }
 
