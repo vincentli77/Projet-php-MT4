@@ -28,7 +28,7 @@
         </div>
 
         <!-- ----------------- cote article qui défile------------ ----------------- -->
-        <!----------------- l'article 1 ------------------>
+
         <div class="blog-header-container">
                 <!----------------- l'article 1 ------------------>
 
@@ -214,17 +214,48 @@
                 echo "Aucun articles"; // on affiche aucun article
             } else {               // sinon
                 echo "<li>";
-                echo $article->getId();
+                echo $article->getId(); 
+                echo "<hr>";
                 echo $article->getTitle();
+                echo "<hr>";
                 echo $article->getContent();
                 echo "</li>";
                 ?>
-                <a href="/article/<?php echo $article->getId()?>">Voir l'article</a>
+                <a href="/article/<?php echo $article->getId()?>">Voir l'article</a> 
                 <a href="/modifyArticle/<?php echo $article->getId()?>">Modifier cet article</a>
                 <a href="/deleteArticle/<?php echo $article->getId()?>">Supprimer cet article</a>
                 <?php
             }
         }
         ?>
+
+<div class="blog-header-container">
+                <!----------------- l'article 1 ------------------>
+
+            <div class="blog-header">
+            <div class="blog-article header-article">
+                <div class="blog-big__title">Esteem</div>
+                <div class="blog-menu small-title date">12.06.2022</div>
+            </div>
+                    <div class="blog-article">
+                        <img src="https://images.unsplash.com/photo-1496629062893-b0f566065d44?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
+                        <h2>Sharing The <span>Widespread</span> Acclaim About Motivation</h2>
+                        
+                        <div class="blog-detail">
+                            <span>By Richard Carnation</span>
+                            <span>5 Min Read</span>
+                        </div>
+
+                        <p>Blonde received widespread acclaim, with critics praising Ocean's introspective lyrics and the album's unconventional</p>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-right" viewBox="0 0 24 24">
+                                <path d="M15 10l5 5-5 5" />
+                                <path d="M4 4v7a4 4 0 004 4h12" />
+                            </svg>
+                                    See More
+                        </a>
+                    </div>
+        </div>
     </ul>
 <?php
+
