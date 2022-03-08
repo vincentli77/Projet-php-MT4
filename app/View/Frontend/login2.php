@@ -7,40 +7,42 @@
 </head>
 
 <body>
-    <hr>
-    <div class="box_connect">
-        <form method="post">
+        <form  class="login2" method="post">
             <!-- <label for="title"> Username: <input name="username" type="text"></label>
             <label for="content"> Password : <input name="password" type="text"></label>
             <input type="submit" value="Envoyer" /> -->
-            <div class='bold-line'></div>
-                    <div class='container'>
-                    <div class='window'>
-                        <div class='overlay'></div>
-                        <div class='content'>
-                        <div class='welcome'> Se connecter </div>
-                        <div class='subtitle'>On y est presque. Avant d'utiliser nos services on a besoin que tu te connectes.</div>
-                        <div class='input-fields'>
-                            <input name="username" type='text' placeholder='Username' class='input-line full-width'></input>
+            
                             <!-- <label for="title"> Username: <input name="username" type="text"></label> -->
-                            <input name="password" type="text" type='password' placeholder='Password' class='input-line full-width'></input>
                             <!-- <label for="content"> Password : <input name="password" type="text"></label> -->
-                        </div>
-                        <div><button class='ghost-round full-width'><input type="submit" value="Se connecter" /></button></div>
                         <!-- <input type="submit" value="Envoyer" /> -->
 
+                <div class="login h-100">
+                    <div class="row h-100 d-flex align-items-center">
+                        <div class="col-md-4 offset-md-4">
+                            <div class="loginWrapper p-5 rounded">
+                                <h4 class="mb-4 text-center text-uppercase">Login</h4>
+
+                                <div class="inputBox mb-4">
+                                    <label for="title">Username</label>
+                                    <input type="text" name="nickname" class="form-control" id="fname">
+                                </div>
+                                <div class="inputBox mb-4">
+                                    <label for="content">Password</label>
+                                    <input type="password" name="password" class="form-control" id="pwd">
+                                </div>
+                                <div class="inputBox mb-4">
+                                    <input type="submit" class="btn btn-default btn-block" value="Sign In">
+                                </div>
+                                <p class="text-center"> Forgot password?<a href="#">Click here !</a></p>
+
+                            </div>
+                        </div>
                     </div>
-                    </div>
-                </div> 
+                </div>
         </form>
-
-        <?php $check ?>
-
-
-    </div>
-    <!--  -->
-    <hr>
-
+    <!-- </div> -->
+    
+    <?php $check ?>
 
 </body>
 
