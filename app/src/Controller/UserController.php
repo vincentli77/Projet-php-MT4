@@ -36,16 +36,21 @@ class UserController extends BaseController
         $manager = new UserManager(PDOFactory::getInstance());
         $user = $manager->findUser($id);
         $this->render('Frontend/modifyUser', ['user' => $user] , 'Modifier un user');
+   
     }
 
     
     public function postModifyUser(int $id)
     {
         $manager = new UserManager(PDOFactory::getInstance());
-        if (isset($_POST['nickname']) && isset($_POST['rank'])) {
+        if (isset($_POST['nickname']) && isset($_POST['rank'] ) && $_POST['password']!=='') {
+      
             $manager->modifyUser($id, $_POST['nickname'], $_POST['password'], $_POST['rank']);
-            $this->render('Frontend/modifyUser', [] , 'Modifier un utilisateur');
-        }
+            header('Location: /');
+            exit;
+        }else{
+        $user = $manager->findUser($id);
+        $this->render('Frontend/modifyUser', ['user' => $user] , 'Modifier un user');        }
     }
 
     public function getDeleteUser(int $id)

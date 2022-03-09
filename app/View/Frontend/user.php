@@ -14,27 +14,40 @@
         <a href="#" class="blog-menu subscribe">Subscribe</a>
     </div>
 
-    <form class="form" method="post">
-        <h1 class="form-title">Créer un user</h1>
-        <div class="grid">
-            <div class="form-group">
-                <input type="text" name="userId" id="userId" placeholder="User Id ">
-                <!-- <label for="authorId"> Author Id : <input name="authorId" type="text"></label>  -->
-            </div>
-            <div class="form-group">
-                <input type="text" name="name" id="user name" placeholder="User Name">
-                <!-- <label for="title"> Titre: <input name="title" type="text"></label>  -->
-            </div>
-            <div class="form-group">
-                <input type="text" name="content" id="content" placeholder="User Rank">
-                <!-- <label for="content"> Content : <input name="content" type="text"></label>  -->
-            </div>
-            <div class="form-group">
-                <!-- <textarea name="message" id="message" placeholder="Your message goes here"></textarea> -->
-                <input type="submit" value="Envoyer" />
-            </div>
 
-            <!-- <input type="submit" value="Envoyer" /> -->
+    <div style="display: initial;" class="blog-header-container">
+        <!----------------- l'article 1 ------------------>
+
+        <?php
+
+        
+        foreach ($users as $key => $user) {
+           if(count($users) == 0) { //si y a 0  resultat
+                echo "Aucun articles"; // on affiche aucun article
+            } else if($key<3){   
+            // sinon
+                ?>
+        <div style="min-height:unset" class="blog-article">
+            <div><?php echo $user->getNickname();?></div>
+
         </div>
-    </form>
+
+        <div style="min-height:unset" class="blog-article">
+            <div style="justify-content: initial; align-items: flex-start;" class="blog-detail">
+                <span style="margin: 0 1rem 1rem 0"><a
+                        style="font-size:initial;font-weight:bold;border-top:unset;padding-top:unset"
+                        href="/modifyUser/<?php echo $user->getId()?>">Modifier cet user</a>
+                </span>
+
+                <span> <a style="font-size:initial;font-weight:bold;border-top:unset;padding-top:unset"
+                        href="/deleteUser/<?php echo $user->getId()?>">Supprimer cet user</a>
+                </span>
+            </div>
+        </div>
+        <?php
+            }
+        }
+        ?>
+    </div>
+
 </div>

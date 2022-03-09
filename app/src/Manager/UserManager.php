@@ -24,11 +24,20 @@ class UserManager extends BaseManager
         $result = $stmnt->fetch(\PDO::FETCH_ASSOC);
         return new User($result);
     }
-    public function findUserLogin( $nickname, $password)
+    public function findUserLogin( $nickname)
     {
-        $query = "SELECT  * FROM `User` WHERE nickname=:nickname AND password=:password ";
+        $query = "SELECT  * FROM `User` WHERE nickname=:nickname ";
         $stmnt = $this->pdo->prepare($query);
-        $stmnt->execute([ ':nickname' => $nickname, ':password' => $password, ]);
+        $stmnt->execute([ ':nickname' => $nickname]);
+        $result = $stmnt->fetch(\PDO::FETCH_ASSOC);
+        return $result ;
+    }
+
+    public function getPassword( $nickname)
+    {
+        $query = "SELECT `password` FROM `User` WHERE nickname=:nickname";
+        $stmnt = $this->pdo->prepare($query);
+        $stmnt->execute([ ':nickname' => $nickname]);
         $result = $stmnt->fetch(\PDO::FETCH_ASSOC);
         return $result ;
     }
