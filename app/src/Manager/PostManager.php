@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Manager;
-
-use App\Core\Factory\PDOFactory;
 use App\Entity\Post;
 
 class PostManager extends BaseManager
@@ -49,9 +47,3 @@ class PostManager extends BaseManager
     }
 
 }
-
-
-
-
-
-

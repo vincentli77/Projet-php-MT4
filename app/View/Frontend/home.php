@@ -2,7 +2,7 @@
     <div class="blog-part is-menu">
         <p><strong>Hello <?php echo $_SESSION['prenom'] ?></strong></p>
         <a href="/" class="blog-menu">
-            Blog
+            Home
             <svg fill="none" stroke="currentColor" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round"
                 class="feather feather-arrow-up-right" viewBox="0 0 24 24">
                 <path d="M7 17L17 7M7 7h10v10" />
@@ -57,6 +57,7 @@
 
 
                     <span> <?php echo  $user->findUser($article->getAuthorId())->getNickname() ?></span>
+
                     <span><a style="font-size:initial;font-weight:bold;border-top:unset;padding-top:unset"
                             href="/modifyArticle/<?php echo $article->getId()?>">Modifier cet
                             article</a>
@@ -154,57 +155,3 @@
         </div>
     </div>
 </div>
-<!-- <ul class="list"> -->
-<!-- 
-    <?php
-        
-        foreach ($articles as $key => $article) {
-           if(count($articles) == 0) { //si y a 0  resultat
-                echo "Aucun articles"; // on affiche aucun article
-            } else {               // sinon
-                echo "<li>";
-                echo $article->getId(); 
-                echo "<hr>";
-                echo $article->getTitle();
-                echo "<hr>";
-                echo $article->getContent();
-                echo "</li>";
-                ?>
-    <a href="/article/<?php echo $article->getId()?>">Voir l'article</a>
-    <a href="/modifyArticle/<?php echo $article->getId()?>">Modifier cet article</a>
-    <a href="/deleteArticle/<?php echo $article->getId()?>">Supprimer cet article</a>
-    <?php
-            }
-        }
-        ?>
-
-    <div class="blog-header-container">
-        <div class="blog-header">
-            <div class="blog-article header-article">
-                <div class="blog-big__title">Esteem</div>
-                <div class="blog-menu small-title date">12.06.2022</div>
-            </div>
-            <div class="blog-article">
-                <img src="https://images.unsplash.com/photo-1496629062893-b0f566065d44?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                    alt="">
-                <h2>Sharing The <span>Widespread</span> Acclaim About Motivation</h2>
-
-                <div class="blog-detail">
-                    <span>By Richard Carnation</span>
-                    <span>5 Min Read</span>
-                </div>
-
-                <p>Blonde received widespread acclaim, with critics praising Ocean's introspective lyrics and
-                    the album's unconventional</p>
-                <a href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-down-right"
-                        viewBox="0 0 24 24">
-                        <path d="M15 10l5 5-5 5" />
-                        <path d="M4 4v7a4 4 0 004 4h12" />
-                    </svg>
-                    See More
-                </a>
-            </div>
-        </div>
-</ul> -->

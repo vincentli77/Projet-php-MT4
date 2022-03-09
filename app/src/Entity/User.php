@@ -71,7 +71,7 @@ class User extends BaseEntity
     /**
      * @return string
      */
-    public function getPassword(): string
+    public function getHashPassword(): string
     {
         return $this->password;
     }

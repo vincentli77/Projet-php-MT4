@@ -18,16 +18,15 @@ class PostController extends BaseController
     
     {
         session_start();
-        $manager2 = new UserManager(PDOFactory::getInstance());
-        // $user = $manager->findAllUsers();
-        $manager = new PostManager(PDOFactory::getInstance());
-        $post = $manager->findAllPosts();
+        $user_manager = new UserManager(PDOFactory::getInstance());
+        $post_manager = new PostManager(PDOFactory::getInstance());
+        $post = $post_manager->findAllPosts();
         $articles = [];
         foreach ($post as $key => $article) {
             array_push($articles, new Post($article));
         }
        if (isset($_SESSION['prenom'])   ) {
-        $this->render('Frontend/home', ['articles' => $articles,'user' => $manager2], 'le titre de la page');
+        $this->render('Frontend/home', ['articles' => $articles,'user' => $user_manager], 'le titre de la page');
         } else{
         header('Location: /login');
         }

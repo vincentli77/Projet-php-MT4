@@ -21,9 +21,6 @@ class RegisterController extends BaseController
 
     public function postRegister()
       {   
-
-  
-
         $manager = new UserManager(PDOFactory::getInstance());
         if (isset($_POST['user']) && isset($_POST['pswd'])) {
             $hashpassword =  password_hash($_POST['pswd'], PASSWORD_DEFAULT);
