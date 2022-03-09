@@ -33,8 +33,6 @@
                 <!-- <textarea name="message" id="message" placeholder="Your message goes here"></textarea> -->
                 <input type="submit" value="Envoyer" />
             </div>
-            <button type="submit" class="btn" value="Envoyer"><a class="submit" href="http://localhost:5555/">Votre mon
-                    article prendre son envol</a></button>
             <!-- <input type="submit" value="Envoyer" /> -->
         </div>
     </form>
