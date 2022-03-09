@@ -53,16 +53,16 @@ showTest:
    controller: \App\Controller\PostController
    action: showTest
 
+register:
+   path: /register
+   controller: \App\Controller\RegisterController
+   action: register
+
+
 login:
    path: /login
    controller: \App\Controller\LoginController
    action: login
-
-
-login2:
-   path: /login2
-   controller: \App\Controller\Login2Controller
-   action: login2
 
 logout:
    path: /logout

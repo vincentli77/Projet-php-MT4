@@ -1,5 +1,6 @@
 <div class="blog">
     <div class="blog-part is-menu">
+        <p><strong>Hello <?php echo $_SESSION['prenom'] ?></strong></p>
         <a href="/" class="blog-menu">
             Blog
             <svg fill="none" stroke="currentColor" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round"
@@ -53,7 +54,9 @@
                 <h2>Sharing The <span>Widespread</span> Acclaim About Motivation</h2>
 
                 <div class="blog-detail">
-                    <span><?php echo $user[$article->getAuthorId()]['nickname']?></span>
+
+
+                    <span> <?php echo  $user->findUser($article->getAuthorId())->getNickname() ?></span>
                     <span><a style="font-size:initial;font-weight:bold;border-top:unset;padding-top:unset"
                             href="/modifyArticle/<?php echo $article->getId()?>">Modifier cet
                             article</a>

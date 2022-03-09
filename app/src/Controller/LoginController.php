@@ -14,20 +14,41 @@ class LoginController extends BaseController
     {   
 
 
-        $this->render('Frontend/login', [], 'le titre de la page');
+        $this->render('Frontend/login', [], 'Login');
 
     }
 
-    public function postLogin()
+    public function postLogin() 
       {   
 
         $manager = new UserManager(PDOFactory::getInstance());
-        if (isset($_POST['user']) && isset($_POST['pswd'])) {
-            $manager->createUser($_POST['user'], $_POST['pswd'],);
-            $this->render('Frontend/login', [] , 'Login');
+         if (isset($_POST['username']) && isset($_POST['password'])) {
+            $check = $manager->findUserLogin($_POST['username'],$_POST['password']);
+            if($check ==false){
+             $this->render('Frontend/login', [] , 'Login');
+
+            }else{
+                session_start();
+                $_SESSION['prenom'] = $check['nickname'];
+                $_SESSION['admin'] = $check['rank'];
+                $_SESSION['id'] = $check['id'];
+                $manager = new UserManager(PDOFactory::getInstance());
+                $user = $manager->findAllUsers();
+                $manager = new PostManager(PDOFactory::getInstance());
+                $post = $manager->findAllPosts();
+                $articles = [];
+                foreach ($post as $key => $article) {
+                    array_push($articles, new Post($article));
+                }
+                header('Location: /');
+                exit;
+            //   $this->render('Frontend/home', ['articles' => $articles,'user' => $user], 'le titre de la page');
+            }
         }
-        $this->render('Frontend/login', [], 'le titre de la page');
 
     }
+
+
+
 
 }

@@ -641,14 +641,14 @@ marquee span:before {
 /* ----------------------- LOGIN ------------------------ */
 /* ------------------------------------------------------ */
 
-.login2{
+.login{
   background-color: #ebf5fc;;
   position: relative;
   padding-top: 10em;
   padding-bottom: 10em;
 }
 
-.login {
+.register {
   background-color: #ebf5fc;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;

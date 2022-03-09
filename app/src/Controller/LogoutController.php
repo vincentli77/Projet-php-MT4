@@ -12,9 +12,10 @@ class LogoutController extends BaseController
 
 {
     public function getLogout()
-    {   
-        header('Location: /login2');
+    {    
+        session_start();
         session_destroy();
+        header('Location: /login');
         exit();
     }
 
