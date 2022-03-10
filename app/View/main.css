@@ -279,6 +279,10 @@ marquee {
   margin-left: -20px;
   flex-shrink: 0;
 }
+marquee span{
+  color: white;
+
+}
 marquee span:before {
   display: inline-block;
   content: "";

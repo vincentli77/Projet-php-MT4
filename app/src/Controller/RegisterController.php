@@ -22,9 +22,10 @@ class RegisterController extends BaseController
     public function postRegister()
       {   
         $manager = new UserManager(PDOFactory::getInstance());
-        if (isset($_POST['user']) && isset($_POST['pswd'])) {
-            $hashpassword =  password_hash($_POST['pswd'], PASSWORD_DEFAULT);
+        if (isset($_POST['user']) && isset($_POST['password'])) {
+            $hashpassword =  password_hash($_POST['password'], PASSWORD_DEFAULT);
             $manager->createUser($_POST['user'], $hashpassword,);
+            
             $this->render('Frontend/register', [] , 'Register');
         }
         $this->render('Frontend/register', [], 'le titre de la page');

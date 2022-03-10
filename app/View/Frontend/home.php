@@ -11,8 +11,7 @@
         <a href="/users" class="blog-menu">User</a>
         <a href="/createArticle" class="blog-menu">Add Article</a>
         <a href="/logout" class="blog-menu">Disconnect</a>
-        <a href="#" class="blog-menu mention">@LynchVinceLau</a>
-        <a href="#" class="blog-menu subscribe">Subscribe</a>
+        <a href="#" class="blog-menu mention">Created by @LynchVinceLau</a>
     </div>
 
 

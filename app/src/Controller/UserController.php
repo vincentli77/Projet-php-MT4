@@ -21,6 +21,7 @@ class UserController extends BaseController
         foreach ($dataUsers as $key => $user) {
             array_push($users, new User($user));
         }
+        session_start();
         $this->render('Frontend/user', ['users' => $users], 'le titre de la page');
     }
 

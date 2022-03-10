@@ -34,12 +34,12 @@ class PostController extends BaseController
     }
 
 
-    // public function getArticle(int $id)
-    // {
-    //     $manager = new PostManager(PDOFactory::getInstance());
-    //     $post = $manager->findPost($id);
-    //     $this->render('Frontend/article', ['article' => $post], 'le titre de la page');
-    // }
+    public function getArticle(int $id)
+    {
+        $manager = new PostManager(PDOFactory::getInstance());
+        $post = $manager->findPost($id);
+        $this->render('Frontend/article', ['article' => $post], 'le titre de la page');
+    }
 
     public function getCreateArticle()
     {
